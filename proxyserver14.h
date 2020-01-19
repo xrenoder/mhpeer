@@ -12,10 +12,11 @@
 
 //#define HAVE_28_CORES 1 
 //#define HAVE_48_CORES 1
-#define HAVE_32_CORES 1
+//#define HAVE_32_CORES 1
+#define HAVE_2_CORES 1
 
-//#define HAVE_HT 1
-//#define USE_HT 1
+#define HAVE_HT 1
+#define USE_HT 1
 
 #if defined(HAVE_28_CORES)
 	static const uint cpuIrqCnt = 2;		// Mode 1, 2, 3: count of network IRQ CPUs
@@ -26,6 +27,9 @@
 #elif defined(HAVE_32_CORES)
 	static const uint cpuIrqCnt = 4;		// Mode 1, 2, 3: count of network IRQ CPUs
 	static const uint cpuShowCols = 16;		// Count of columns of CPU stats in log file	
+#elif defined(HAVE_2_CORES)
+	static const uint cpuIrqCnt = 2;		// Mode 1, 2, 3: count of network IRQ CPUs
+	static const uint cpuShowCols = 2;		// Count of columns of CPU stats in log file
 #endif
 
 #if defined(HAVE_HT)
